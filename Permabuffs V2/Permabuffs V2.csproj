@@ -16,10 +16,10 @@
 
   <!-- NuGet References -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.9" />
-    <PackageReference Include="MySql.Data" Version="8.0.30" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.10" />
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="OTAPI.Upcoming" Version="3.1.9-alpha" />
+    <PackageReference Include="OTAPI.Upcoming" Version="3.1.12-alpha" />
   </ItemGroup>
 
   <!-- Local References -->
