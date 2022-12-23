@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Timers;
 using Terraria;
+using Terraria.ID;
 using TerrariaApi.Server;
 using TShockAPI;
 using TShockAPI.DB;
@@ -250,7 +251,7 @@ namespace Permabuffs_V2
 				else
 					bufftype = bufftypelist[0];
 			}
-			else if (bufftype > Main.maxBuffTypes || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 206 (1.3.5.3)).
+			else if (bufftype > BuffID.Count || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 206 (1.3.5.3)).
 				args.Player.SendErrorMessage("Invalid buff ID!");
 
 
@@ -371,7 +372,7 @@ namespace Permabuffs_V2
 					else
 						bufftype = bufftypelist[0];
 				}
-				else if (bufftype > Main.maxBuffTypes || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 192 (1.3.1)).
+				else if (bufftype > BuffID.Count || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 192 (1.3.1)).
 					args.Player.SendErrorMessage("Invalid buff ID!");
 
 				//Removes all groups where the buff isn't included, leaving only a list of groups where player has access AND contains the buff
@@ -516,7 +517,7 @@ namespace Permabuffs_V2
 					bufftype = bufflist[0];
 				}
 
-				if (bufftype < 0 || bufftype > Main.maxBuffTypes)
+				if (bufftype < 0 || bufftype > BuffID.Count)
 				{
 					args.Player.SendErrorMessage("Invalid buff ID: {0}", bufftype.ToString());
 					return;
@@ -595,7 +596,7 @@ namespace Permabuffs_V2
 					bufftype = bufflist[0];
 				}
 
-				if (bufftype < 0 || bufftype > Main.maxBuffTypes)
+				if (bufftype < 0 || bufftype > BuffID.Count)
 				{
 					args.Player.SendErrorMessage("Invalid buff ID: {0}", bufftype.ToString());
 					return;
@@ -656,7 +657,7 @@ namespace Permabuffs_V2
 					bufftype = bufftypelist[0];
 			}
 
-			if (bufftype > Main.maxBuffTypes || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 190).
+			if (bufftype > BuffID.Count || bufftype < 1) // Buff ID is not valid (less than 1 or higher than 190).
 				args.Player.SendErrorMessage("Invalid buff ID!");
 
 			if (!bufftype.IsPermanent() || !config.buffgroups.Any(e => e.buffIDs.Contains(bufftype)))
